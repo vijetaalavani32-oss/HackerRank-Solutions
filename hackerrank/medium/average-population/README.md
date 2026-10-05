@@ -1,4 +1,4 @@
-# Revising Aggregations - Averages
+# Average Population
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -18,12 +18,11 @@ The **CITY** table is described as follows:
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:35:22.355Z  
+**Submitted:** 2026-10-05T13:38:05.218Z  
 
 ```db2
-SELECT AVG(POPULATION)
-FROM CITY
-WHERE DISTRICT ='California';
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY;
 
 ```
 
