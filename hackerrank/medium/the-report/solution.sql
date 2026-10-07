@@ -1,20 +1,20 @@
 SELECT
-    c.company_code,
-    c.founder,
-    COUNT(DISTINCT lm.lead_manager_code),
-    COUNT(DISTINCT sm.senior_manager_code),
-    COUNT(DISTINCT m.manager_code),
-    COUNT(DISTINCT e.employee_code)
-FROM Company c
-LEFT JOIN Lead_Manager lm
-    ON c.company_code = lm.company_code
-LEFT JOIN Senior_Manager sm
-    ON c.company_code = sm.company_code
-LEFT JOIN Manager m
-    ON c.company_code = m.company_code
-LEFT JOIN Employee e
-    ON c.company_code = e.company_code
-GROUP BY
-    c.company_code,
-    c.founder
-ORDER BY c.company_code;
+    CASE
+        WHEN G.Grade >= 8 THEN S.Name
+        ELSE 'NULL'
+    END AS Name,
+    G.Grade,
+    S.Marks
+FROM Students S
+JOIN Grades G
+    ON S.Marks BETWEEN G.Min_Mark AND G.Max_Mark
+ORDER BY
+    G.Grade DESC,
+    CASE
+        WHEN G.Grade >= 8 THEN S.Name
+        ELSE NULL
+    END ASC,
+    CASE
+        WHEN G.Grade < 8 THEN S.Marks
+        ELSE NULL
+    END ASC;
