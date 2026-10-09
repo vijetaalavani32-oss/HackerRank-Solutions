@@ -1,4 +1,4 @@
-# String Split and Join
+# Text Wrap
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -43,18 +43,14 @@ The second line contains the width, $max_width$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-09T17:45:21.145Z  
+**Submitted:** 2026-10-09T17:50:02.100Z  
 
 ```py
 
 
-def split_and_join(line):
-    return "-".join(line.split(" "))
+def wrap(string, max_width):
+    return "\n".join(textwrap.wrap(string,max_width))
 
-if __name__ == '__main__':
-    line = input()
-    result = split_and_join(line)
-    print(result)
 
 ```
 
