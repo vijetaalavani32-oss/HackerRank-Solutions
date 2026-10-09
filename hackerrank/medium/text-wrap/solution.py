@@ -1,9 +1,5 @@
 
 
-def split_and_join(line):
-    return "-".join(line.split(" "))
+def wrap(string, max_width):
+    return "\n".join(textwrap.wrap(string,max_width))
 
-if __name__ == '__main__':
-    line = input()
-    result = split_and_join(line)
-    print(result)
