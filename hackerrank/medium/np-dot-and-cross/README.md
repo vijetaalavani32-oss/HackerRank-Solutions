@@ -47,24 +47,30 @@ Print the matrix multiplication of $A$ and $B$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T15:16:59.319Z  
+**Submitted:** 2026-10-13T15:23:24.279Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-import numpy as np 
-n=int(input())
-A=[]
-B=[]
+
+import numpy as np
+
+n = int(input())
+
+A = []
+B = []
+
 for i in range(n):
-    row=list(map(int,input().split()))
+    row = list(map(int, input().split()))
     A.append(row)
+
 for i in range(n):
-    row =list(map(int,input().split()))
+    row = list(map(int, input().split()))
     B.append(row)
-A=np.array(A)
-B=np.array(B)
-result=np.dot(A,B)
-print(result)
+
+A = np.array(A)
+B = np.array(B)
+
+print(np.dot(A, B))
 
 ```
 
