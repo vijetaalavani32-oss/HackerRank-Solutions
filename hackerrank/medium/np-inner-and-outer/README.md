@@ -1,4 +1,4 @@
-# Dot and Cross
+# Inner and Outer
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -49,24 +49,16 @@ Second, print the outer product.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T15:17:34.113Z  
+**Submitted:** 2026-10-13T17:07:56.924Z  
 
 ```py
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+
 import numpy as np 
-n=int(input())
-A=[]
-B=[]
-for i in range(n):
-    row=list(map(int,input().split()))
-    A.append(row)
-for i in range(n):
-    row =list(map(int,input().split()))
-    B.append(row)
-A=np.array(A)
-B=np.array(B)
-result=np.dot(A,B)
-print(result)
+A=np.array(list(map(int,input().split())))
+B=np.array(list(map(int,input().split())))
+
+print (np.inner(A,B))
+print (np.outer(A,B))
 
 ```
 
