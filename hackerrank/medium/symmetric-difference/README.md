@@ -1,4 +1,4 @@
-# Introduction to Sets
+# Symmetric Difference
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -127,14 +127,17 @@ Output the symmetric difference integers in ascending order, one per line.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T14:25:02.135Z  
+**Submitted:** 2026-10-13T14:32:12.472Z  
 
 ```py
-def average(array):
-    distinct_heights =set(array)
-    result=sum(distinct_heights) / len(distinct_heights)
-    return round(result,3)
-
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+m=int(input())
+a=set(map(int,input().split()))
+n=int(input())
+b=set(map(int,input().split()))
+result=a.symmetric_difference(b)
+for num in sorted(result):
+    print(num)
 
 ```
 
