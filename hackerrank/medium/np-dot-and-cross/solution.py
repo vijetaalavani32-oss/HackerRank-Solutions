@@ -1,17 +1,15 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-
-import numpy as np
-
-n, m = map(int, input().split())
-
-my_array = []
-
+import numpy as np 
+n=int(input())
+A=[]
+B=[]
 for i in range(n):
-    row = list(map(int, input().split()))
-    my_array.append(row)
-
-my_array = np.array(my_array)
-
-print(np.mean(my_array, axis=1))
-print(np.var(my_array, axis=0))
-print(round(np.std(my_array), 11))
+    row=list(map(int,input().split()))
+    A.append(row)
+for i in range(n):
+    row =list(map(int,input().split()))
+    B.append(row)
+A=np.array(A)
+B=np.array(B)
+result=np.dot(A,B)
+print(result)
