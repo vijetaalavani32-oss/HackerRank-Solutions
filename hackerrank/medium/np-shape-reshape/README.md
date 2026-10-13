@@ -1,4 +1,4 @@
-# Arrays
+# Shape and Reshape
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -68,15 +68,15 @@ Print the $3 $X$ 3$ *NumPy* array.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T18:00:01.976Z  
+**Submitted:** 2026-10-13T18:03:20.943Z  
 
 ```py
-
-def arrays(arr):
-     a = numpy.array(arr, float)
-     return a[::-1]
-    
-
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np 
+arr=list(map(int,input().split()))
+arr=np.array(arr)
+arr=np.reshape(arr,(3,3))
+print(arr)
 
 ```
 
