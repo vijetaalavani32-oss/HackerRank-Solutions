@@ -1,4 +1,4 @@
-# Inner and Outer
+# Polynomials
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -70,16 +70,17 @@ Print the desired value.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T17:08:00.201Z  
+**Submitted:** 2026-10-13T17:10:27.678Z  
 
 ```py
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 
-import numpy as np 
-A=np.array(list(map(int,input().split())))
-B=np.array(list(map(int,input().split())))
+import numpy as np
 
-print (np.inner(A,B))
-print (np.outer(A,B))
+P = list(map(float, input().split()))
+x = float(input())
+
+print(np.polyval(P, x))
 
 ```
 
