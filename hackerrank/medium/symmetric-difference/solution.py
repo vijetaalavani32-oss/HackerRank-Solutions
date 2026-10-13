@@ -1,5 +1,8 @@
-def average(array):
-    distinct_heights =set(array)
-    result=sum(distinct_heights) / len(distinct_heights)
-    return round(result,3)
-
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+m=int(input())
+a=set(map(int,input().split()))
+n=int(input())
+b=set(map(int,input().split()))
+result=a.symmetric_difference(b)
+for num in sorted(result):
+    print(num)
