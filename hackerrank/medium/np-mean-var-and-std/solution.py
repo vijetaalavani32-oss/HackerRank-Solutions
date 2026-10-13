@@ -4,15 +4,14 @@ import numpy as np
 
 n, m = map(int, input().split())
 
-arr = []
+my_array = []
 
 for i in range(n):
     row = list(map(int, input().split()))
-    arr.append(row)
+    my_array.append(row)
 
-arr = np.array(arr)
+my_array = np.array(my_array)
 
-minimums = np.min(arr, axis=1)
-answer = np.max(minimums)
-
-print(answer)
+print(np.mean(my_array, axis=1))
+print(np.var(my_array, axis=0))
+print(round(np.std(my_array), 11))
