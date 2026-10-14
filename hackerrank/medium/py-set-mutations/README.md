@@ -1,4 +1,4 @@
-# Set .symmetric_difference() Operation
+# Set Mutations
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -78,17 +78,30 @@ Output the sum of elements in set $A$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T06:20:04.813Z  
+**Submitted:** 2026-10-14T06:47:29.807Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-n=int(input())
-english=set(map(int,input().split()))
 
-b=int(input())
-french=set(map(int,input().split()))
+n = int(input())
+A = set(map(int, input().split()))
 
-print(len(english.symmetric_difference(french)))
+N = int(input())
+
+for i in range(N):
+    operation, length = input().split()
+    other_set = set(map(int, input().split()))
+
+    if operation == "intersection_update":
+        A.intersection_update(other_set)
+    elif operation == "update":
+        A.update(other_set)
+    elif operation == "symmetric_difference_update":
+        A.symmetric_difference_update(other_set)
+    elif operation == "difference_update":
+        A.difference_update(other_set)
+
+print(sum(A))
 
 ```
 
