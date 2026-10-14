@@ -1,4 +1,4 @@
-# Set .intersection() Operation
+# Set .difference() Operation
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -57,7 +57,7 @@ Output the total number of students who are subscribed to the *English* newspape
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T06:00:59.938Z  
+**Submitted:** 2026-10-14T06:03:52.522Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
@@ -67,7 +67,10 @@ english=set(map(int,input().split()))
 b=int(input())
 french=set(map(int,input().split()))
 
-print(len(english.intersection(french)))
+print(len(english.difference(french)))
+
+
+
 
 ```
 
