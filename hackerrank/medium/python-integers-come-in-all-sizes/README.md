@@ -1,4 +1,4 @@
-# Power - Mod Power
+# Integers Come In All Sizes
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -49,15 +49,15 @@ Print the result of $a^b + c^d$ on one line.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T07:41:20.062Z  
+**Submitted:** 2026-10-14T07:47:35.301Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 a=int(input())
 b=int(input())
-m=int(input())
-print(pow(a,b))
-print(pow(a,b,m))
+c=int(input())
+d=int(input())
+print(a ** b+c ** d)
 
 ```
 
