@@ -1,4 +1,4 @@
-# Input()
+# Python Evaluation
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -67,15 +67,12 @@ Input string is less than 100 characters.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T05:30:32.074Z  
+**Submitted:** 2026-10-14T05:45:34.091Z  
 
 ```py
-# Enter your code here. Read input from STDIN. Print output to STDOU
-
-x, y = map(int, input().split())
-polynomial = input()
-
-print(eval(polynomial) == y)
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+var=input()
+eval(var)
 
 ```
 
