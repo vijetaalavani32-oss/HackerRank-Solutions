@@ -5,13 +5,11 @@ import re
 n = int(input())
 
 for _ in range(n):
-    uid = input()
+    card = input()
 
-    if (len(uid) == 10
-        and len(set(uid)) == 10
-        and len(re.findall(r'[A-Z]', uid)) >= 2
-        and len(re.findall(r'[0-9]', uid)) >= 3
-        and uid.isalnum()):
+    pattern = r'^[456]\d{15}$|^[456]\d{3}(-\d{4}){3}$'
+
+    if re.fullmatch(pattern, card) and not re.search(r'(\d)\1{3}', card.replace('-', '')):
         print("Valid")
     else:
         print("Invalid")
