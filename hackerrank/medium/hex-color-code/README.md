@@ -1,4 +1,4 @@
-# Validating and Parsing Email Addresses
+# Hex Color Code
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -57,20 +57,32 @@ Output the color codes with '*#*' symbols on separate lines.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-17T09:02:46.677Z  
+**Submitted:** 2026-10-17T09:05:01.172Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
 import re
-import email.utils
 
 n = int(input())
+inside = False
+
 for _ in range(n):
-    name, addr = input().split()
-    email_addr = email.utils.parseaddr(addr)[1]
-    if re.fullmatch(r"[A-Za-z][A-Za-z0-9._-]*@[A-Za-z]+\.[A-Za-z]{1,3}", email_addr):
-        print(email.utils.formataddr((name, email_addr)))
+    line = input()
+
+    if '{' in line:
+        inside = True
+        continue
+
+    if '}' in line:
+        inside = False
+        continue
+
+    if inside:
+        colors = re.findall(r'#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?(?![0-9a-fA-F])', line)
+        for color in colors:
+            print(color)
+
 
 ```
 
