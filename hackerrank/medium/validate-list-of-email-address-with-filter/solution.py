@@ -1,15 +1,7 @@
-cube = lambda x:x**3# complete the lambda function 
+import re
+def fun(s):
+     pattern = r'^[A-Za-z0-9_-]+@[A-Za-z0-9]+\.[A-Za-z]{1,3}$'
+     return re.match(pattern, s) is not None
 
-def fibonacci(n):
-    result = []
-    a, b = 0, 1
-
-    for i in range(n):
-        result.append(a)
-        a, b = b, a + b
-
-    return result
-
-
-    # return a list of fibonacci numbers
+    # return True if s is a valid email, else return False
 
