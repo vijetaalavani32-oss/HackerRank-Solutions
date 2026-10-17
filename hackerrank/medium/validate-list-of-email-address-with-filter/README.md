@@ -1,4 +1,4 @@
-# Map and Lambda Function
+# Validating Email Addresses With a Filter
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -60,23 +60,15 @@ Each line is a non-empty string.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-17T12:42:54.003Z  
+**Submitted:** 2026-10-17T12:45:59.056Z  
 
 ```py
-cube = lambda x:x**3# complete the lambda function 
+import re
+def fun(s):
+     pattern = r'^[A-Za-z0-9_-]+@[A-Za-z0-9]+\.[A-Za-z]{1,3}$'
+     return re.match(pattern, s) is not None
 
-def fibonacci(n):
-    result = []
-    a, b = 0, 1
-
-    for i in range(n):
-        result.append(a)
-        a, b = b, a + b
-
-    return result
-
-
-    # return a list of fibonacci numbers
+    # return True if s is a valid email, else return False
 
 
 ```
