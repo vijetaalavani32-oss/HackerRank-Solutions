@@ -1,4 +1,4 @@
-# Validating UID
+# Validating Credit Card Numbers
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -49,7 +49,7 @@ Print 'Valid' if the credit card number is valid. Otherwise, print 'Invalid'. Do
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-17T09:08:57.438Z  
+**Submitted:** 2026-10-17T09:10:02.914Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
@@ -59,13 +59,11 @@ import re
 n = int(input())
 
 for _ in range(n):
-    uid = input()
+    card = input()
 
-    if (len(uid) == 10
-        and len(set(uid)) == 10
-        and len(re.findall(r'[A-Z]', uid)) >= 2
-        and len(re.findall(r'[0-9]', uid)) >= 3
-        and uid.isalnum()):
+    pattern = r'^[456]\d{15}$|^[456]\d{3}(-\d{4}){3}$'
+
+    if re.fullmatch(pattern, card) and not re.search(r'(\d)\1{3}', card.replace('-', '')):
         print("Valid")
     else:
         print("Invalid")
