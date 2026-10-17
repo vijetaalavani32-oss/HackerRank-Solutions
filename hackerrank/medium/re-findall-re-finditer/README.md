@@ -1,4 +1,4 @@
-# Re.split()
+# Re.findall() & Re.finditer()
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -50,11 +50,19 @@ If no match is found, print `-1`.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-15T06:29:31.492Z  
+**Submitted:** 2026-10-17T12:50:24.935Z  
 
 ```py
-regex_pattern = r"[,.]"	# Do not delete 'r'.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re 
+s = input()
 
+matches = re.findall(r'(?<=[qwrtypsdfghjklzxcvbnm])[aeiou]{2,}(?=[qwrtypsdfghjklzxcvbnm])', s, re.IGNORECASE)
+
+if matches:
+    print(*matches, sep='\n')
+else:
+    print(-1)
 
 ```
 
