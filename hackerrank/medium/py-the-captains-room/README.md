@@ -1,4 +1,4 @@
-# Set .discard(), .remove() & .pop()
+# The Captain's Room
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -38,30 +38,17 @@ Output the Captain's room number.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T08:01:46.396Z  
+**Submitted:** 2026-10-19T08:06:41.076Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
+K = int(input())
+rooms = list(map(int, input().split()))
 
-n = int(input())
-s = set(map(int, input().split()))
-N = int(input())
+captain = (sum(set(rooms)) * K - sum(rooms)) // (K - 1)
 
-for _ in range(N):
-    command = input().split()
-
-    if command[0] == "pop":
-        s.remove(min(s))
-    elif command[0] == "remove":
-        s.remove(int(command[1]))
-    elif command[0] == "discard":
-        s.discard(int(command[1]))
-
-print(sum(s))
-
-
-
+print(captain)
 
 ```
 
