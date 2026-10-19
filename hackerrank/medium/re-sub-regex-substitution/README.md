@@ -1,4 +1,4 @@
-# Detect Floating Point Number
+# Regex Substitution
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -94,18 +94,20 @@ Both `&&` and `||` should have a _space_ " " on both sides.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T13:43:59.629Z  
+**Submitted:** 2026-10-19T13:53:28.327Z  
 
 ```py
-# Enter your code here. Read input from STDIN. Print output to STDOUT\
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 
 import re
 
-for _ in range(int(input())):
-    s = input()
-    print(bool(re.match(r'^[+-]?\d*\.\d+$', s)))
+n = int(input())
 
-    
+for _ in range(n):
+    line = input()
+    line = re.sub(r'(?<= )&&(?= )', 'and', line)
+    line = re.sub(r'(?<= )\|\|(?= )', 'or', line)
+    print(line)
 
 ```
 
