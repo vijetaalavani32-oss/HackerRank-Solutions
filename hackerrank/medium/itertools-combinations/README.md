@@ -1,4 +1,4 @@
-# itertools.permutations()
+# itertools.combinations()
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -45,15 +45,21 @@ Print the different combinations of string $S$ on separate lines.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-12T05:05:24.806Z  
+**Submitted:** 2026-10-19T07:15:55.927Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-from itertools import permutations 
-s,k = input().split()
-for p in permutations (sorted(s),int(k)):
-    print(''.join(p))
-    
+
+from itertools import combinations
+
+S, K = input().split()
+S = sorted(S)
+K = int(K)
+
+for i in range(1, K + 1):
+    for c in combinations(S, i):
+        print(''.join(c))
+
 
 ```
 
