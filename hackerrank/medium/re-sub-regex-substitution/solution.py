@@ -1,9 +1,11 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT\
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 
 import re
 
-for _ in range(int(input())):
-    s = input()
-    print(bool(re.match(r'^[+-]?\d*\.\d+$', s)))
+n = int(input())
 
-    
+for _ in range(n):
+    line = input()
+    line = re.sub(r'(?<= )&&(?= )', 'and', line)
+    line = re.sub(r'(?<= )\|\|(?= )', 'or', line)
+    print(line)
