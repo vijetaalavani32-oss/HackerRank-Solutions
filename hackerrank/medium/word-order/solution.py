@@ -1,10 +1,18 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Enter your code here. Read input from STDIN. Print output to 
 
-from collections import OrderedDict
-n = int(input())
-d = OrderedDict()
-for _ in range(n):
-    name, price = input().rsplit(" ", 1)
-    d[name] = d.get(name, 0) + int(price)
-for name, price in d.items():
-    print(name, price)
+from collections import defaultdict
+
+n, m = map(int, input().split())
+
+d = defaultdict(list)
+
+for i in range(1, n + 1):
+    word = input()
+    d[word].append(i)
+
+for _ in range(m):
+    word = input()
+    if word in d:
+        print(*d[word])
+    else:
+        print(-1)
