@@ -1,6 +1,12 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-from itertools import permutations 
-s,k = input().split()
-for p in permutations (sorted(s),int(k)):
-    print(''.join(p))
-    
+
+from itertools import combinations
+
+S, K = input().split()
+S = sorted(S)
+K = int(K)
+
+for i in range(1, K + 1):
+    for c in combinations(S, i):
+        print(''.join(c))
+
