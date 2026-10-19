@@ -1,4 +1,4 @@
-# Incorrect Regex
+# Polar Coordinates
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -60,25 +60,14 @@ Output two lines:
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T07:42:34.893Z  
+**Submitted:** 2026-10-19T07:47:26.915Z  
 
 ```py
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-import re
-
-T = int(raw_input())
-
-for _ in range(T):
-    s = raw_input()
-    try:
-        re.compile(s)
-        print "True"
-    except re.error:
-        print "False"
-
-
-
-    
+import cmath
+z=complex(input())
+print(abs(z))
+print(cmath.phase(z))
 
 ```
 
