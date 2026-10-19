@@ -1,4 +1,4 @@
-# DefaultDict Tutorial
+# Word Order
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -29,27 +29,20 @@ On the second line, output the number of occurrences for each distinct word acco
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-19T14:02:47.925Z  
+**Submitted:** 2026-10-19T14:06:00.349Z  
 
 ```py
-# Enter your code here. Read input from STDIN. Print output to 
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 
-from collections import defaultdict
-
-n, m = map(int, input().split())
-
-d = defaultdict(list)
-
-for i in range(1, n + 1):
+from collections import OrderedDict
+n = int(input())
+words = OrderedDict()
+for _ in range(n):
     word = input()
-    d[word].append(i)
+    words[word] = words.get(word, 0) + 1
+print(len(words))
+print(*words.values())
 
-for _ in range(m):
-    word = input()
-    if word in d:
-        print(*d[word])
-    else:
-        print(-1)
 
 ```
 
